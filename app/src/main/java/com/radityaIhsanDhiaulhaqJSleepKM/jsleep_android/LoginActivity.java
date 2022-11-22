@@ -44,7 +44,9 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
+//                Account account = requestAccount();
+//                Account account = requestLogin();
+                requestLogin();
 //                Intent move = new Intent(LoginActivity.this, MainActivity.class);
 //                startActivity(move);
             }
@@ -79,6 +81,28 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
             }
         });
+        return null;
+    }
+
+    protected Account requestLogin(){
+        mApiService.login(username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful()){
+                    MainActivity.cookies = response.body();
+                    Intent move = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(move);
+                    Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t){
+                System.out.println(t.toString());
+                Toast.makeText(mContext, "Email atau password kemungkinan salah", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return null;
     }
 }

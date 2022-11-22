@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Account;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Room;
 
 import java.io.BufferedReader;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
+    public static Account cookies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

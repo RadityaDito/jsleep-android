@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Account;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Renter;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Room;
 
 import java.io.BufferedReader;
@@ -22,9 +23,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Account;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.request.BaseApiService;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.request.UtilsApi;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
     public static Account cookies;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
 
 }

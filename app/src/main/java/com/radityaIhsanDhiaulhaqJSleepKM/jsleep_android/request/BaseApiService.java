@@ -3,6 +3,7 @@ package com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.request;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Account;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.City;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Facility;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Renter;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Room;
 //Base API Service
 import java.util.List;
@@ -27,6 +28,17 @@ public interface BaseApiService {
     Call<Account> register  (@Query("name") String name,
                              @Query("email") String email,
                              @Query("password") String password);
+
+    @POST("/account/{id}/registerStore")
+    Call<Renter> registerRenterRequest (
+            @Path("id") int id,
+            @Query("username") String username,
+            @Query("address")  String address,
+            @Query("phoneNumber") String phoneNumber
+    );
+
+    @GET("renter/getAllRoom")
+    Call<List<Room>> getAllRoom (@Query("page") int page, @Query("pageSize") int pageSize);
 
 //    @POST("account/{id}/registerRenter")
 //    Call<Renter> registerRenter(@Path("id") int id,

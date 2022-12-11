@@ -30,7 +30,8 @@ import retrofit2.Response;
 public class DetailRoomActivity extends AppCompatActivity {
     protected static Room sessionRoom;
     protected static Payment currentPayment;
-    List<Facility> facilityList = MainActivity.rooms.get(MainActivity.roomIndex).facility;
+//    List<Facility> facilityList = MainActivity.rooms.get(MainActivity.roomIndex).facility;
+    List<Facility> facilityList = MainActivity.allRooms.get(MainActivity.roomIndex).facility;
     CheckBox checkboxAC, checkboxBalcony, checkboxBathtub, checkboxFitnessCenter, checkboxRefrigerator, checkboxRestaurant, checkboxSwimPool, checkboxWifi;
     Button rentButton, payButton, cancelButton;
     CardView afterRent;
@@ -52,7 +53,8 @@ public class DetailRoomActivity extends AppCompatActivity {
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        sessionRoom = MainActivity.rooms.get(MainActivity.roomIndex);
+//        sessionRoom = MainActivity.rooms.get(MainActivity.roomIndex);
+        sessionRoom = MainActivity.allRooms.get(MainActivity.roomIndex);
         //TextView
         TextView nameDetail = findViewById(R.id.detail_name);
         TextView bedDetail = findViewById(R.id.detail_bedType);

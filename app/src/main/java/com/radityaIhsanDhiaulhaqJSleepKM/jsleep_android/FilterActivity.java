@@ -82,6 +82,9 @@ public class FilterActivity extends AppCompatActivity {
                 else if(isBedType){
                     filterByBed(pageNumber, 10, (BedType) (bedType.getSelectedItem()));
                 }
+                else if(isPrice){
+                    filterByPrice(pageNumber, 5,(int)Integer.parseInt(filterMin.getText().toString()), (int)Integer.parseInt(filterMax.getText().toString()));
+                }
                // getHistory(pageNumber,5, MainActivity.cookies.id, MainActivity.cookies.renter.id);
             }
         });
@@ -157,7 +160,7 @@ public class FilterActivity extends AppCompatActivity {
         filterList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                MainActivity.roomIndex = position;
+                MainActivity.roomIndex = filterResult.get(position).id;
                 System.out.println(MainActivity.roomIndex);
                 Intent move = new Intent(FilterActivity.this, DetailRoomActivity.class);
                 startActivity(move);

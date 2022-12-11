@@ -71,7 +71,6 @@ public class CreateRoomActivity extends AppCompatActivity implements AdapterView
 
 
         adapterCity = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item , City.values());
-//        adapterCity.setDropDownViewResource(R.layout.dropdown_item);
         city.setAdapter(adapterCity);
 
         adapterBedType = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, BedType.values());

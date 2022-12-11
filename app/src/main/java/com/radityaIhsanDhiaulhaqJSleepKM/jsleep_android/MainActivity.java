@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     ListView list;
     BaseApiService mApiService;
     Context mContext;
-    Button prev, next, go, historyButton;
+    Button prev, next, go, historyButton, filterButton;
     int pageNumber;
 
     public static List <Payment> payments;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
         historyButton = findViewById(R.id.main_historyButton);
-
+        filterButton = findViewById(R.id.main_filterButton);
         next = findViewById(R.id.main_next_button);
         prev = findViewById(R.id.main_prev_button);
         go = findViewById(R.id.main_goButton);
@@ -71,32 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
         getRoomList(pageNumber,5); //Call
 
-//        ArrayList<Room> listRoom = new ArrayList<>();
-//        ArrayList<String> listId = new ArrayList<>();
-//
-//        Gson gson = new Gson();
-//        try {
-//            path = getAssets().open("randomRoomList.json");
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(path));
-//
-//            Room[] tempRoom = gson.fromJson(reader, Room[].class);
-//            Collections.addAll(listRoom, tempRoom);
-//
-////            InputStream filepath = getAssets().open("randomRoomList.json");
-////            BufferedReader reader = new BufferedReader(new InputStreamReader(filepath));
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        for (Room r : listRoom ) {
-//            listId.add(r.name);
-//        }
-//
-//        ArrayAdapter<String> roomArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,listId);
-//        ListView listView = findViewById(R.id.main_listView);
-//
-//        listView.setAdapter(roomArrayAdapter);
+       filterButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent move = new Intent(MainActivity.this, FilterActivity.class);
+               startActivity(move);
+           }
+       });
 
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,8 +130,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     @Override
@@ -175,6 +154,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent move2 = new Intent(MainActivity.this, CreateRoomActivity.class);
                 startActivity(move2);
                 return true;
+            case R.id.logout_button://Logout diklik balik ke login
+                cookies = null;
+                Intent move3 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(move3);
+                Toast.makeText(mContext, "Logout Successfull", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
         }

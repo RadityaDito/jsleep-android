@@ -20,4 +20,11 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always"
         />
+
+    <item android:id="@+id/logout_button"
+        android:icon="@drawable/ic_baseline_logout_24"
+        android:title="Logout Button"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always"
+        />
 </menu>

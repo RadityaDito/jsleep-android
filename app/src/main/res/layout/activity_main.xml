@@ -9,11 +9,10 @@
 
     <Button
         android:id="@+id/main_historyButton"
-        android:layout_width="300dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="161dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#170F58"
         android:text="History"
         android:textColor="#FFFFFF"
@@ -22,9 +21,23 @@
         app:cornerRadius="30dp"
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/main_filterButton"
+        android:layout_width="161dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#170F58"
+        android:text="Filter"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/main_goButton"

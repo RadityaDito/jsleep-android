@@ -96,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
                     MainActivity.cookies = response.body();
+                    username.setText("");
+                    password.setText("");
                     Intent move = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(move);
                     Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();

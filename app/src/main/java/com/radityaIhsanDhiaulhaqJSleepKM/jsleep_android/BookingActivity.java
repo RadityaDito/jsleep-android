@@ -301,7 +301,8 @@ public class BookingActivity extends AppCompatActivity {
                     Toast.makeText(mContext, "Booking Successful", Toast.LENGTH_LONG).show();
                     Intent move = new Intent(BookingActivity.this, MainActivity.class);
                     startActivity(move);
-                    MainActivity.cookies.balance-= roomPrice * calcDays(from2, to2);
+//                    MainActivity.cookies.balance-= roomPrice * calcDays(from2, to2);
+                    requestAccount(MainActivity.cookies.id);
                 }
             }
 
@@ -325,7 +326,6 @@ public class BookingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if(response.isSuccessful()){
-//                    Toast.makeText(mContext, "Payment Successful", Toast.LENGTH_LONG).show();
                     Toast.makeText(mContext, "Payment Successful", Toast.LENGTH_SHORT).show();
                     requestAccount(MainActivity.cookies.id);
                     Intent move = new Intent(BookingActivity.this, SuccessPaymentActivity.class);

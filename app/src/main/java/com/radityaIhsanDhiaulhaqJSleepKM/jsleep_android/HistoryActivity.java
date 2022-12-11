@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,6 +27,9 @@ public class HistoryActivity extends AppCompatActivity {
     Context mContext;
     ListView paymentList;
     public static List <Payment> payments;
+    int pageNumber;
+    Button next, prev;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +39,33 @@ public class HistoryActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
         paymentList = findViewById(R.id.history_list);
+        pageNumber = 0;
+        next = findViewById(R.id.history_nextButton);
+        prev = findViewById(R.id.history_prevButton);
 
-        getHistory(0, 10, MainActivity.cookies.id, MainActivity.cookies.renter.id);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pageNumber++;
+                System.out.println(pageNumber);
+                getHistory(pageNumber,5, MainActivity.cookies.id, MainActivity.cookies.renter.id);
+            }
+        });
+
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pageNumber >= 1){
+                    pageNumber--;
+                    System.out.println(pageNumber);
+                    getHistory(pageNumber, 5, MainActivity.cookies.id, MainActivity.cookies.renter.id);
+                }
+            }
+        });
+
+
+
+        getHistory(0, 5, MainActivity.cookies.id, MainActivity.cookies.renter.id);
 
     }
 

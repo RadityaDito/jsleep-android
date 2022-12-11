@@ -93,7 +93,14 @@ public interface BaseApiService {
     Call<List<Payment>> getHistory(@Query("page") int page, @Query("pageSize") int pageSize, @Query("buyerId") int buyerId,
                                    @Query("renterId") int renterId);
 
+    @GET("room/filterByCity")
+    Call<List<Room>> filterByCity(@Query("page") int page, @Query("pageSize") int pageSize,@Query("city") City city);
 
+    @GET("room/filterByPrice")
+    Call<List<Room>> filterByPrice(@Query("page") int page, @Query("pageSize") int pageSize, @Query("minPrice") int minPrice, @Query("maxPrice") int maxPrice);
+
+    @GET("room/filterByBed")
+    Call<List<Room>> filterByBed(@Query("page") int page, @Query("pageSize") int pageSize,@Query("bedType") BedType bedType);
     //VoucherController BaseApi
 //    @GET("voucher/{id}")
 //    Call<Voucher> getVoucher (@Path("id") int id);
@@ -104,9 +111,6 @@ public interface BaseApiService {
     @GET("voucher/{id}/canApply")
     Call<Boolean> canApply (@Path("id") int id,
                             @Query("price") double price);
-//
-//    @GET("voucher/getAvailable")
-//    Call<List<Voucher>> getAvailable(@Query("page") int page,
-//                                     @Query("pageSize") int pageSize);
+
 
 }

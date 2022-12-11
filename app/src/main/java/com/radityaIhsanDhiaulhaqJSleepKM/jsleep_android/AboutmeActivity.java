@@ -162,6 +162,7 @@ public class AboutmeActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 //                    topUp = response.body();
                     Toast.makeText(mContext, "Top Up Successful!", Toast.LENGTH_SHORT).show();
+                    System.out.println(topUpInput.toString());
                     balanceAccount.setText(NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(MainActivity.cookies.balance + Double.parseDouble(topUpInput.getText().toString())));
 //                    sessionAccount.balance+= Double.parseDouble(topUpInput.getText().toString());
                     MainActivity.cookies.balance += Double.parseDouble(topUpInput.getText().toString());

@@ -1,11 +1,14 @@
 package com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.request;
 
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Account;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.BedType;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.City;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Facility;
+import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Payment;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Renter;
 import com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model.Room;
 //Base API Service
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,29 +40,35 @@ public interface BaseApiService {
             @Query("phoneNumber") String phoneNumber
     );
 
-    @GET("renter/getAllRoom")
+    @GET("room/getAllRoom")
     Call<List<Room>> getAllRoom (@Query("page") int page, @Query("pageSize") int pageSize);
 
-//    @POST("account/{id}/registerRenter")
-//    Call<Renter> registerRenter(@Path("id") int id,
-//                                @Query("username") String username,
-//                                @Query("address") String address,
-//                                @Query("phoneNumber") String phoneNumber);
+    @POST("room/create")
+    Call<Room> createRoom (@Query("accountId") int accountId,
+                           @Query("name") String name,
+                           @Query("size") int size,
+                           @Query("price") int price,
+                           @Query("facility") List<Facility> facility,
+                           @Query("city") City city,
+                           @Query("address") String address,
+                           @Query("bedType") BedType bedType
+    );
+
 
     @POST("account/{id}/topUp")
-    Call<Boolean> topUp(@Path("id") int id,
-                        @Query("balance") int balance);
+    Call<Boolean> topUpRequest(@Path("id") int id,
+                        @Query("balance") double balance);
 
     //PaymentController BaseApi
 //    @GET("payment/{id}")
 //    Call<Payment> getPayment(@Path("id") int id);
 //
-//    @POST("payment/create")
-//    Call<Payment> createPayment ( @Query("buyerId") int buyerId,
-//                                  @Query("renterId") int renterId,
-//                                  @Query("roomId") int roomId,
-//                                  @Query("from") String from,
-//                                  @Query("to") String to);
+    @POST("payment/create")
+    Call<Payment> createPayment (@Query("buyerId") int buyerId,
+                                 @Query("renterId") int renterId,
+                                 @Query("roomId") int roomId,
+                                 @Query("from") String from,
+                                 @Query("to") String to);
 
     @POST("payment/{id}/accept")
     Call<Boolean> accept (@Path("id") int id);
@@ -75,15 +84,15 @@ public interface BaseApiService {
     Call<List<Room>> getRoomByRenter (@Path("id") int id,
                                       @Query("page") int page,
                                       @Query("pageSize") int pageSize);
+    @GET("payment/getPayment")
+    Call<Payment> getPayment (@Query("buyerId") int buyerId,
+                              @Query("renterId") int renterId,
+                              @Query("roomId") int roomId);
 
-    @POST("room/create")
-    Call<Room> createRoom (@Query("accountId") int accountId,
-                           @Query("name") String name,
-                           @Query("size") int size,
-                           @Query("price") double price,
-                           @Query("facility") Facility facility,
-                           @Query("city") City city,
-                           @Query("address") String address);
+    @GET("payment/getHistory")
+    Call<List<Payment>> getHistory(@Query("page") int page, @Query("pageSize") int pageSize, @Query("buyerId") int buyerId,
+                                   @Query("renterId") int renterId);
+
 
     //VoucherController BaseApi
 //    @GET("voucher/{id}")

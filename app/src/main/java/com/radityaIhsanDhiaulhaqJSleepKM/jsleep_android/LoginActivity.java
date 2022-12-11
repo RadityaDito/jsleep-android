@@ -33,12 +33,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        TextView register = findViewById(R.id.login_registerNow);
+        TextView register = findViewById(R.id.login_register);
         Button login = findViewById(R.id.login_loginButton);
-        username = findViewById(R.id.usernameTextBox);
+        username = findViewById(R.id.login_username);
         password = findViewById(R.id.passwordTextBox);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected Account requestAccount(){
+    protected Account requestAccount(int id){
         mApiService.getAccount(0).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {

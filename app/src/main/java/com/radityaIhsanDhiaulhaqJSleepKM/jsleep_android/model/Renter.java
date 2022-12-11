@@ -5,7 +5,7 @@ public class Renter extends Serializable {
     public String address = "";
     public String username;
 
-    public Renter(int id) {
-        super(id);
-    }
+//    public Renter(int id) {
+//        super(id);
+//    }
 }

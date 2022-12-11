@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 requestRegister();
-                System.out.println("aduihwuadauiwd");
             }
         });
 

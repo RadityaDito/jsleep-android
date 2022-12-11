@@ -1,6 +1,6 @@
 package com.radityaIhsanDhiaulhaqJSleepKM.jsleep_android.model;
 
 public enum Facility{
-    WiFi, Bathub, Balcony, AC, FitnessCenter,
+    WiFi, Bathtub, Balcony, AC, FitnessCenter,
     Refrigerator, Restaurant, SwimmingPool
 }

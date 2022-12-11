@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/framemakebooking"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingActivity">
+
+    <Button
+        android:id="@+id/booking_saveButton"
+        android:layout_width="322dp"
+
+
+        android:layout_height="58dp"
+
+
+        android:layout_marginStart="45dp"
+
+
+        android:layout_marginEnd="45dp"
+
+
+        android:layout_marginBottom="75dp"
+
+
+        android:backgroundTint="#170F58"
+
+
+        android:text="BOOK"
+
+
+        android:textColor="#FFFFFF"
+
+
+        android:textColorHint="#FFFFFF"
+
+
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/booking_payButton"
+        android:layout_width="322dp"
+
+
+        android:layout_height="58dp"
+
+
+        android:layout_marginStart="45dp"
+
+
+        android:layout_marginEnd="45dp"
+
+
+        android:layout_marginBottom="96dp"
+
+
+        android:backgroundTint="#170F58"
+
+
+        android:text="Pay"
+
+
+        android:textColor="#FFFFFF"
+
+
+        android:textColorHint="#FFFFFF"
+
+
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/booking_cancelButton"
+        android:layout_width="322dp"
+
+
+        android:layout_height="58dp"
+
+
+        android:layout_marginStart="45dp"
+
+
+        android:layout_marginEnd="45dp"
+
+
+        android:layout_marginBottom="16dp"
+
+
+        android:backgroundTint="#170F58"
+
+
+        android:text="Cancel"
+
+
+        android:textColor="#FFFFFF"
+
+
+        android:textColorHint="#FFFFFF"
+
+
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/booking_datePickerFrom"
+        style="?android:spinnerStyle"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_weight="1"
+        android:text="JAN 01 2022"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/booking_datePickerTo"
+        style="?android:spinnerStyle"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_weight="1"
+        android:text="DEC 31 2022"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/booking_price"
+        android:layout_width="271dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="56dp"
+        android:layout_weight="1"
+        android:text="Rp.500.000"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/booking_balance"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="80dp"
+        android:layout_weight="1"
+        android:text="Rp.0"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_date">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/title_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="172dp"
+        android:text="Make Booking"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="156dp"
+        android:text="To"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_date" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="80dp"
+        android:text="Price"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/booking_datePickerFrom" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="124dp"
+        android:text="From"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_date" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:text="Your Balance"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

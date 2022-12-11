@@ -20,9 +20,9 @@ public class Account extends Serializable {
 //    Context mContext;
 
 
-    public Account(int id) {
-        super(id);
-    }
+//    public Account(int id) {
+//        super(id);
+//    }
 
     @Override
     public String toString(){

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/framedetailroom">
+
+    <TextView
+        android:id="@+id/detail_name"
+        android:layout_width="200dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detail_address"
+        android:layout_width="200dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Address"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_name" />
+
+    <TextView
+        android:id="@+id/textView_bedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="250dp"
+        android:drawableLeft="@drawable/ic_baseline_single_bed_24"
+        android:drawablePadding="15dp"
+        android:text="Bed Type"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
+        android:drawableLeft="@drawable/ic_baseline_size_24"
+        android:drawablePadding="15dp"
+        android:text="Size"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_bedType" />
+
+    <TextView
+        android:id="@+id/detail_bedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="77dp"
+        android:hint="Bed Type"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_address" />
+
+    <TextView
+        android:id="@+id/detail_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="77dp"
+        android:hint="Bed Size"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_bedType" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+        android:drawablePadding="15dp"
+        android:text="Price"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_size" />
+
+    <TextView
+        android:id="@+id/detail_price"
+        android:layout_width="179dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="76dp"
+        android:hint="Rp"
+        android:textAlignment="viewEnd"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_size" />
+
+    <CheckBox
+        android:id="@+id/cb_swimmingPool"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Swimming Pool"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_refrigerator"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_refrigerator"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Refrigerator"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_wifi"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_AC"
+        android:layout_width="64dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="AC"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_swimmingPool"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="144dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Wifi"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="72dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Restaurant"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_fitnessCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_bathtub"
+        android:layout_width="88dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="144dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Bathtub"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_fitnessCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="50dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Fitness Center"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_bathtub"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/cb_balcony"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="90dp"
+        android:buttonTint="#7B71E2"
+        android:checked="false"
+        android:enabled="false"
+        android:text="Balcony"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/cb_restaurant"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/detail_confirmPay"
+        android:layout_width="341dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#7B71E3"
+        android:fontFamily="sans-serif"
+        android:text="Confirm"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <Button
+        android:id="@+id/detail_rentButton"
+        android:layout_width="341dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#7B71E3"
+        android:fontFamily="sans-serif"
+        android:text="Rent"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <TextView
+        android:id="@+id/detail_successBook"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="44dp"
+        android:text="Success Booking"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_wifi" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
